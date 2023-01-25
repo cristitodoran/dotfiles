@@ -10,7 +10,11 @@
   navigate = true
   light = true
 [merge]
-  conflictstyle = diff3
+  tool = nvim
+[mergetool "nvim"]
+  cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+[mergetool]
+  prompt = false
 [diff]
   colorMoved = default
 [user]
