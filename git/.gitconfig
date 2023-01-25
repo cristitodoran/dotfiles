@@ -1,24 +1,18 @@
 [core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
 	editor = vim
 	excludesfile = /home/cristian.todoran/.gitignore
 [interactive]
-	diffFilter = diff-so-fancy --patch
-[color]
-	ui = true
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
-[color "diff"]
-	meta = 11
-	frag = magenta bold
-	func = 146 bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+	diffFilter = delta --color-only
+[delta]
+  side-by-side = true
+  line-numbers = true
+  navigate = true
+  light = true
+[merge]
+  conflictstyle = diff3
+[diff]
+  colorMoved = default
 [user]
 	email = cristian.todoran@softvision.com
 	name = Todoran Pompiliu Cristian
