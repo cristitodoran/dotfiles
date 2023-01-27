@@ -31,8 +31,6 @@ return require('packer').startup(function(use)
 
   -- undo tree
   use 'mbbill/undotree'
-  -- git commands
-  use 'airblade/vim-gitgutter'
 
   use {
     'VonHeikemen/lsp-zero.nvim',
@@ -60,14 +58,18 @@ return require('packer').startup(function(use)
   -- learn vim
   use 'ThePrimeagen/vim-be-good'
 
+  -- status line
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
+  -- dev icons
   use 'nvim-tree/nvim-web-devicons'
+  -- tabs
   use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
 
+  -- file tree
   use {
     'nvim-tree/nvim-tree.lua',
     requires = {
@@ -76,8 +78,11 @@ return require('packer').startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
 
+  -- git diff view and merge tool
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  -- comment lines
   use 'preservim/nerdcommenter'
+  -- session manager
   use {
     'rmagatti/auto-session',
     config = function()
@@ -87,6 +92,7 @@ return require('packer').startup(function(use)
       }
     end
   }
+  -- surround with stuff
   use({
     "kylechui/nvim-surround",
     tag = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -96,9 +102,20 @@ return require('packer').startup(function(use)
       })
     end
   })
+  -- typescript helper
   use 'jose-elias-alvarez/typescript.nvim'
+  -- open terminals inside nvim
   use {"akinsho/toggleterm.nvim", tag = '*', config = function()
     require("toggleterm").setup()
   end}
+  -- Git
+  use 'tpope/vim-fugitive'
+  -- Git hunks interaction
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
 end)
 
