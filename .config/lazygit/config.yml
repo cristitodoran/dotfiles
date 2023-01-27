@@ -1,0 +1,18 @@
+git:
+  branchLogCmd: "git log --format=format:\"%C(blue)%as %C(auto)%h %C(green)%aN%Creset %s\""
+  paging:
+    colorArg: never
+    pager: delta --light --paging=never
+gui:
+  showIcons: true
+  theme:
+    selectedLineBgColor:
+      - reverse
+    selectedRangeBgColor:
+      - reverse
+customCommands:
+  - key: "M"
+    command: "nvim . -c \"DiffviewOpen\""
+    context: "files"
+    loadingText: "Opening vim merge tool"
+    subprocess: true
