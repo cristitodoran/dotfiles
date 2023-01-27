@@ -33,11 +33,7 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- search current word
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
--- set file executable
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
--- remove file executable
-vim.keymap.set("n", "<leader>X", "<cmd>!chmod -x %<CR>", { silent = true })
+vim.keymap.set("n", "<leader>w", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- barbar.vim - Tabs
 -- Move to previous/next
@@ -81,7 +77,11 @@ vim.keymap.set('n', '<C-p>', '<Cmd>BufferPick<CR>')
 --vim.keymap.set('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>')
 
 -- nvim-tree
-vim.keymap.set('n', '<leader>t', '<Cmd>NvimTreeToggle<CR>')
+vim.keymap.set('n', '<leader>tt', '<Cmd>NvimTreeToggle<CR>')
 vim.keymap.set("n", "<leader>mn", require("nvim-tree.api").marks.navigate.next)
 vim.keymap.set("n", "<leader>mp", require("nvim-tree.api").marks.navigate.prev)
 vim.keymap.set("n", "<leader>ms", require("nvim-tree.api").marks.navigate.select)
+
+-- auto-session
+vim.keymap.set('n', '<leader>ss', '<Cmd>SaveSession<CR>')
+vim.keymap.set('n', '<leader>sr', '<Cmd>NvimTreeClose<CR><Cmd>RestoreSession<CR><Cmd>NvimTreeFocus<CR>')

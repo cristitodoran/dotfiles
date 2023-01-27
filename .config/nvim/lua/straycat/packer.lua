@@ -102,8 +102,6 @@ return require('packer').startup(function(use)
       })
     end
   })
-  -- typescript helper
-  use 'jose-elias-alvarez/typescript.nvim'
   -- open terminals inside nvim
   use {"akinsho/toggleterm.nvim", tag = '*', config = function()
     require("toggleterm").setup()

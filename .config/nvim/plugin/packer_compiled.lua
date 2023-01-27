@@ -215,11 +215,6 @@ _G.packer_plugins = {
     path = "/home/cristian.todoran/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
-  ["typescript.nvim"] = {
-    loaded = true,
-    path = "/home/cristian.todoran/.local/share/nvim/site/pack/packer/start/typescript.nvim",
-    url = "https://github.com/jose-elias-alvarez/typescript.nvim"
-  },
   undotree = {
     loaded = true,
     path = "/home/cristian.todoran/.local/share/nvim/site/pack/packer/start/undotree",
@@ -234,11 +229,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cristian.todoran/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
-  },
-  ["vim-gitgutter"] = {
-    loaded = true,
-    path = "/home/cristian.todoran/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
-    url = "https://github.com/airblade/vim-gitgutter"
   }
 }
 
