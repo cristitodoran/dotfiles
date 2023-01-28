@@ -85,3 +85,7 @@ vim.keymap.set("n", "<leader>ms", require("nvim-tree.api").marks.navigate.select
 -- auto-session
 vim.keymap.set('n', '<leader>ss', '<Cmd>SaveSession<CR>')
 vim.keymap.set('n', '<leader>sr', '<Cmd>NvimTreeClose<CR><Cmd>RestoreSession<CR><Cmd>NvimTreeFocus<CR>')
+
+-- clipboard manager
+vim.keymap.set('n', '<leader>sc', function() require('telescope').extensions.neoclip.default() end) 
+vim.keymap.set('n', '<leader>sm', function() require('telescope').extensions.macroscope.default() end) 
