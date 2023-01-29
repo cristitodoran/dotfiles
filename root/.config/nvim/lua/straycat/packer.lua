@@ -160,4 +160,54 @@ return require('packer').startup(function(use)
     "petertriho/nvim-scrollbar",
     config = function() require("scrollbar").setup {} end
   }
+  use({
+    "andythigpen/nvim-coverage",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("coverage").setup {}
+    end,
+  })
+  -- TODO: Add mappings in one place
+  use({
+    'mrjones2014/legendary.nvim',
+    requires = 'kkharji/sqlite.lua'
+  })
+  -- help with shortcuts
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+      require("which-key").setup {
+      }
+    end
+  }
+  -- github cli
+  use {
+    'pwntester/octo.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+      'kyazdani42/nvim-web-devicons',
+    },
+    config = function()
+      require "octo".setup()
+    end
+  }
+  -- Better quickfix window
+  use { 'kevinhwang91/nvim-bqf', ft = 'qf' }
+  use { 'junegunn/fzf', run = function()
+    vim.fn['fzf#install']()
+  end
+  }
+  use({
+    "roobert/search-replace.nvim",
+    config = function()
+      require("search-replace").setup({
+        -- optionally override defaults
+        default_replace_single_buffer_options = "gcI",
+        default_replace_multi_buffer_options = "egcI",
+      })
+    end,
+  })
 end)
