@@ -81,14 +81,13 @@ plugins=(
 git
 sudo
 colored-man-pages
-zsh-syntax-highlighting
 zsh-autosuggestions
 zsh-interactive-cd
 thefuck
 fzf
 ripgrep
 z
-tig
+aliases
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -119,6 +118,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias editchanged="!git status --porcelain | sed -ne 's/^ M //p' | tr '\\n' '\\0' | tr -d '\"' | xargs -0 nvim"
+alias update="sudo pacman-mirrors -f 5 && sudo pacman -Syyu"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -130,4 +130,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /home/straycat/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
