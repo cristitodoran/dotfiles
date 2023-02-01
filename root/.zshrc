@@ -130,4 +130,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source /home/straycat/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
