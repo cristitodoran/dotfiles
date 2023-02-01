@@ -131,3 +131,4 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/doc/fzf/examples/key-bindings.zsh
