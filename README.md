@@ -1,18 +1,19 @@
-#1. VIM install
+# NEOVIM install
 
  ### Prerequisites
-- Install nerd font - https://www.nerdfonts.com/font-downloads
-- Install delta for git diffs - https://github.com/dandavison/delta
-- Set delta as lazygit custom pager - https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md
-- Install github cli
-- sudo apt install fd-find
-- https://github.com/ms-jpq/sad
-- install packer
-- install oh-my-zsh
-- pip install thefuck
+- install neovim - `sudo apt install neovim`
+- install nerd font - https://www.nerdfonts.com/font-downloads
+- install delta for git diffs - https://github.com/dandavison/delta
+- set delta as lazygit custom pager - https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md
+- install github cli - https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+- intall fd-find - `sudo apt install fd-find`
+- install Sad for file replacement - https://github.com/ms-jpq/sad
+- install packer - https://github.com/wbthomason/packer.nvim
+- install oh-my-zsh - https://ohmyz.sh/
+- install thefuck - `pip install thefuck`
 - install following zsh pluggins manually: powerlevel10k, zsh-syntax-highlighting, zsh-autosuggestions
-- Install libsql lite (for neoclip): `sudo apt-get -y install libsqlite3-0 libsqlite3-dev`
-- install tig https://jonas.github.io/tig/
+- install libsql lite (for neoclip): `sudo apt-get -y install libsqlite3-0 libsqlite3-dev`
+- install tig - https://jonas.github.io/tig/
 
 ### Leader ? - cheatsheet
 
