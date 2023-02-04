@@ -226,4 +226,11 @@ return require('packer').startup(function(use)
       }
     end,
   })
+  -- install without yarn or npm
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
+  use 'stsewd/gx-extended.vim'
+  use 'nvim-treesitter/nvim-treesitter-context'
 end)

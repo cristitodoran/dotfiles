@@ -29,3 +29,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+
+require('lspconfig').tsserver.setup({
+  root_dir = require('lspconfig.util').root_pattern('.git')
+})
