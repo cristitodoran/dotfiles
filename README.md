@@ -1,3 +1,5 @@
+#1. VIM install
+
  ### Prerequisites
 - Install nerd font - https://www.nerdfonts.com/font-downloads
 - Install delta for git diffs - https://github.com/dandavison/delta
@@ -32,7 +34,7 @@
 `C-d` - Scroll down in preview window    
 `C-q` - send files to quickfixlist    
 `A-q` - send selected files to quickfixlisth    
-`C-Up, C-Down - cycle history    
+`C-Up` and `C-Down` - cycle history    
 
 ### Undo - undotree
 `<leader>u` - show undo tree
@@ -112,5 +114,4 @@
 - familiarize with search and replace
 - find a way to search and replace in all files
 - incercat harpoon si poate sa ascund tree, sau folosit cu ce vine deja vim
-- checkout marks
-   ￼
+- checkout marks￼
