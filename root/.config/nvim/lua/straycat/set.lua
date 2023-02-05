@@ -33,3 +33,4 @@ vim.opt.colorcolumn = '80'
 vim.g.mapleader = ' '
 
 vim.g.auto_cursorline_wait_ms = 0
+

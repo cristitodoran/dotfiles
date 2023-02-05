@@ -13,12 +13,12 @@ return require('packer').startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
+  -- Theme
   use {
-    -- theme
-    'shaunsingh/solarized.nvim',
-    as = 'solarized',
+    'catppuccin/nvim',
+    name = 'catppuccin',
     config = function()
-      vim.cmd('colorscheme solarized')
+      vim.cmd('colorscheme catppuccin-mocha')
     end
   }
 
@@ -66,8 +66,7 @@ return require('packer').startup(function(use)
   -- dev icons
   use 'nvim-tree/nvim-web-devicons'
   -- tabs
-  use { 'romgrk/barbar.nvim', wants = 'nvim-web-devicons' }
-
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
   -- file tree
   use {
     'nvim-tree/nvim-tree.lua',
@@ -199,38 +198,77 @@ return require('packer').startup(function(use)
   use { 'junegunn/fzf', run = function()
     vim.fn['fzf#install']()
   end
-  }
-  use({
-    "roobert/search-replace.nvim",
-    config = function()
-      require("search-replace").setup({
-        -- optionally override defaults
-        default_replace_single_buffer_options = "gcI",
-        default_replace_multi_buffer_options = "egcI",
-      })
-    end,
-  })
-  use({
-    "ray-x/sad.nvim",
-    requires = { "ray-x/guihua.lua", run = "cd lua/fzy && make" },
-    config = function()
-      require("sad").setup {
-        debug = false, -- print debug info
-        diff = 'delta', -- you can use `less`, `diff-so-fancy`
-        ls_file = 'fdfind', -- also git ls_file
-        exact = false, -- exact match
-        vsplit = false, -- split sad window the screen vertically, when set to number
-        -- it is a threadhold when window is larger than the threshold sad will split vertically,
-        height_ratio = 0.6, -- height ratio of sad window when split horizontally
-        width_ratio = 0.6, -- height ratio of sad window when split vertically
-      }
-    end,
-  })
-  -- install without yarn or npm
-  use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  })
-  use 'stsewd/gx-extended.vim'
-  use 'nvim-treesitter/nvim-treesitter-context'
+}
+use({
+  "roobert/search-replace.nvim",
+  config = function()
+    require("search-replace").setup({
+      -- optionally override defaults
+      default_replace_single_buffer_options = "gcI",
+      default_replace_multi_buffer_options = "egcI",
+    })
+  end,
+})
+use({
+  "ray-x/sad.nvim",
+  requires = { "ray-x/guihua.lua", run = "cd lua/fzy && make" },
+  config = function()
+    require("sad").setup {
+      debug = false, -- print debug info
+      diff = 'delta', -- you can use `less`, `diff-so-fancy`
+      ls_file = 'fdfind', -- also git ls_file
+      exact = false, -- exact match
+      vsplit = false, -- split sad window the screen vertically, when set to number
+      -- it is a threadhold when window is larger than the threshold sad will split vertically,
+      height_ratio = 0.6, -- height ratio of sad window when split horizontally
+      width_ratio = 0.6, -- height ratio of sad window when split vertically
+    }
+  end,
+})
+-- install without yarn or npm
+use({
+  "iamcco/markdown-preview.nvim",
+  run = function() vim.fn["mkdp#util#install"]() end,
+})
+use 'stsewd/gx-extended.vim'
+use 'nvim-treesitter/nvim-treesitter-context'
+use 'mfussenegger/nvim-dap'
+use {
+  "rcarriga/nvim-dap-ui",
+  requires = { "mfussenegger/nvim-dap" },
+  config = function()
+    require("dapui").setup()
+  end
+}
+use {
+  'NvChad/nvim-colorizer.lua',
+  config = function()
+    require('colorizer').setup();
+  end
+}
+use "lukas-reineke/indent-blankline.nvim"
+use {
+  'j-hui/fidget.nvim',
+  config = function()
+    require('fidget').setup{
+      window = {
+        blend = 0,
+      },
+    }
+  end
+}
+use {
+  "utilyre/barbecue.nvim",
+  tag = "*",
+  requires = {
+    "SmiteshP/nvim-navic",
+    "nvim-tree/nvim-web-devicons", -- optional dependency
+  },
+  after = "nvim-web-devicons", -- keep this if you're using NvChad
+  config = function()
+    require("barbecue").setup{
+      theme = "catppuccin"
+    }
+  end,
+}
 end)

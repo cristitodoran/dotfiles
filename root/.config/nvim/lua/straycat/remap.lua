@@ -35,46 +35,38 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 -- search current word
 vim.keymap.set("n", "<leader>w", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
--- barbar.vim - Tabs
+-- Bufferline
 -- Move to previous/next
-vim.keymap.set('n', '<A-,>', '<Cmd>BufferPrevious<CR>')
-vim.keymap.set('n', '<A-.>', '<Cmd>BufferNext<CR>')
+vim.keymap.set('n', '<A-,>', '<Cmd>BufferLineCyclePrev<CR>')
+vim.keymap.set('n', '<A-.>', '<Cmd>BufferLineCycleNext<CR>')
 -- Re-order to previous/next
-vim.keymap.set('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>')
-vim.keymap.set('n', '<A->>', '<Cmd>BufferMoveNext<CR>')
+vim.keymap.set('n', '<A-<>', '<Cmd>BufferLineMovePrev<CR>')
+vim.keymap.set('n', '<A->>', '<Cmd>BufferLineMoveNext<CR>')
 -- Goto buffer in position...
-vim.keymap.set('n', '<A-1>', '<Cmd>BufferGoto 1<CR>')
-vim.keymap.set('n', '<A-2>', '<Cmd>BufferGoto 2<CR>')
-vim.keymap.set('n', '<A-3>', '<Cmd>BufferGoto 3<CR>')
-vim.keymap.set('n', '<A-4>', '<Cmd>BufferGoto 4<CR>')
-vim.keymap.set('n', '<A-5>', '<Cmd>BufferGoto 5<CR>')
-vim.keymap.set('n', '<A-6>', '<Cmd>BufferGoto 6<CR>')
-vim.keymap.set('n', '<A-7>', '<Cmd>BufferGoto 7<CR>')
-vim.keymap.set('n', '<A-8>', '<Cmd>BufferGoto 8<CR>')
-vim.keymap.set('n', '<A-9>', '<Cmd>BufferGoto 9<CR>')
-vim.keymap.set('n', '<A-0>', '<Cmd>BufferLast<CR>')
+vim.keymap.set('n', '<A-1>', '<Cmd>BufferLineGoToBuffer 1<CR>')
+vim.keymap.set('n', '<A-2>', '<Cmd>BufferLineGoToBuffer 2<CR>')
+vim.keymap.set('n', '<A-3>', '<Cmd>BufferLineGoToBuffer 3<CR>')
+vim.keymap.set('n', '<A-4>', '<Cmd>BufferLineGoToBuffer 4<CR>')
+vim.keymap.set('n', '<A-5>', '<Cmd>BufferLineGoToBuffer 5<CR>')
+vim.keymap.set('n', '<A-6>', '<Cmd>BufferLineGoToBuffer 6<CR>')
+vim.keymap.set('n', '<A-7>', '<Cmd>BufferLineGoToBuffer 7<CR>')
+vim.keymap.set('n', '<A-8>', '<Cmd>BufferLineGoToBuffer 8<CR>')
+vim.keymap.set('n', '<A-9>', '<Cmd>BufferLineGoToBuffer 9<CR>')
+vim.keymap.set('n', '<A-0>', '<Cmd>BufferLineGoToBuffer -1<CR>')
 -- Pin/unpin buffer
-vim.keymap.set('n', '<A-p>', '<Cmd>BufferPin<CR>')
+vim.keymap.set('n', '<A-p>', '<Cmd>BufferLineTogglePin<CR>')
 -- Close buffer
-vim.keymap.set('n', '<A-c>', '<Cmd>BufferClose<CR>')
--- Wipeout buffer
---                 :BufferWipeout
+vim.keymap.set('n', '<A-c>', '<Cmd>bd<CR>')
 -- Close commands
 vim.keymap.set('n', '<leader>cab', '<Cmd>BufferCloseAllButCurrentOrPinned<CR>')
-vim.keymap.set('n', '<leader>cal', '<Cmd>BufferCloseBuffersLeft<CR>')
-vim.keymap.set('n', '<leader>car', '<Cmd>BufferCloseBuffersRight<CR>')
---                 :BufferCloseAllButCurrent
---                 :BufferCloseAllButPinned
---                 :BufferCloseAllButCurrentOrPinned
---                 :BufferCloseBuffersLeft
---                 :BufferCloseBuffersRight
+vim.keymap.set('n', '<leader>cal', '<Cmd>BufferLineCloseLeft<CR>')
+vim.keymap.set('n', '<leader>car', '<Cmd>BufferCloseRight<CR>')
 -- Magic buffer-picking mode
-vim.keymap.set('n', '<C-p>', '<Cmd>BufferPick<CR>')
+vim.keymap.set('n', '<C-p>', '<Cmd>BufferLinePick<CR>')
 -- Sort automatically by...
---vim.keymap.set('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>')
---vim.keymap.set('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>')
---vim.keymap.set('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>')
---vim.keymap.set('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>')
+vim.keymap.set('n', '<leader>bt', '<Cmd>BufferLineSortByTabs<CR>')
+vim.keymap.set('n', '<leader>bd', '<Cmd>BufferLineSortByDirectory<CR>')
+vim.keymap.set('n', '<leader>be', '<Cmd>BufferLineSortByExtension<CR>')
 
 -- nvim-tree
 vim.keymap.set('n', '<leader>tt', '<Cmd>NvimTreeToggle<CR>')
@@ -84,8 +76,17 @@ vim.keymap.set("n", "<leader>ms", require("nvim-tree.api").marks.navigate.select
 
 -- auto-session
 vim.keymap.set('n', '<leader>ss', '<Cmd>SaveSession<CR>')
-vim.keymap.set('n', '<leader>sr', '<Cmd>NvimTreeClose<CR><Cmd>RestoreSession<CR><Cmd>NvimTreeFocus<CR>')
+--vim.keymap.set('n', '<leader>sr', '<Cmd>NvimTreeClose<CR><Cmd>RestoreSession<CR><Cmd>NvimTreeFocus<CR>')
+vim.keymap.set('n', '<leader>sr', '<Cmd>RestoreSession<CR>')
 
 -- clipboard manager
 vim.keymap.set('n', '<leader>sc', function() require('telescope').extensions.neoclip.default() end) 
 vim.keymap.set('n', '<leader>sm', function() require('telescope').extensions.macroscope.default() end) 
+
+-- debugger
+vim.keymap.set('n', '<leader>db', function() require('dap').toggle_breakpoint()  end)
+vim.keymap.set('n', '<leader>dc', function() require('dap').continue() end)
+vim.keymap.set('n', '<leader>do', function() require('dap').step_over() end)
+vim.keymap.set('n', '<leader>di', function() require('dap').step_into() end)
+vim.keymap.set('n', '<leader>dro', function() require('dap').repl.open() end)
+vim.keymap.set('n', '<leader>drc', function() require('dap').repl.close() end)

@@ -14,6 +14,7 @@
 - install following zsh pluggins manually: powerlevel10k, zsh-syntax-highlighting, zsh-autosuggestions
 - install libsql lite (for neoclip): `sudo apt-get -y install libsqlite3-0 libsqlite3-dev`
 - install tig - https://jonas.github.io/tig/
+- install lldb for debuging c programs. After that make sure llvm-symbolizer path is in the PATH
 
 ### Leader ? - cheatsheet
 
@@ -98,6 +99,8 @@
 ### Tabs - barbar
 `A-,` - prev tab  
 `A-.` - next tab  
+`A-<` - move left  
+`A->` - move right  
 `A-[1,0]` - go to tab  
 `A-p` - pin tab  
 `A-c` - close tab  
@@ -105,6 +108,13 @@
 `<leader>cab` - close all but current or pinned  
 `<leader>cal` - close all to the left  
 `<leader>car` - close all to the right  
+`<leader>bt` - sort by tabs--
+`<leader>bd` - sort by directory--
+`<leader>be` - sort by extension--
+
+### Navigate help pages
+`C-]` - go to section
+`C-o` - go back
 
 ### Ideas:
 - create install script for everything
@@ -115,4 +125,5 @@
 - familiarize with search and replace
 - find a way to search and replace in all files
 - incercat harpoon si poate sa ascund tree, sau folosit cu ce vine deja vim
-- checkout marks￼
+- checkout marks
+- checkout this https://github.com/ldelossa/nvim-ide - for git file history

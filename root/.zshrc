@@ -72,6 +72,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6c7086"
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -119,6 +121,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias editchanged="!git status --porcelain | sed -ne 's/^ M //p' | tr '\\n' '\\0' | tr -d '\"' | xargs -0 nvim"
 alias update="sudo pacman-mirrors -f 5 && sudo pacman -Syyu"
+alias v=nvim
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -131,4 +134,4 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/doc/fzf/examples/key-bindings.zsh
+# source /usr/share/doc/fzf/examples/key-bindings.zsh
