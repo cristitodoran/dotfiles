@@ -15,10 +15,9 @@ return require('packer').startup(function(use)
 
   -- Theme
   use {
-    'catppuccin/nvim',
-    name = 'catppuccin',
-    config = function()
-      vim.cmd('colorscheme catppuccin-mocha')
+    'shaunsingh/solarized.nvim',
+    config = function ()
+      vim.cmd('colorscheme solarized')
     end
   }
 
@@ -267,7 +266,7 @@ use {
   after = "nvim-web-devicons", -- keep this if you're using NvChad
   config = function()
     require("barbecue").setup{
-      theme = "catppuccin"
+      theme = "solarized"
     }
   end,
 }
