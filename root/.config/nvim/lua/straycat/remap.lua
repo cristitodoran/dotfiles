@@ -58,9 +58,8 @@ vim.keymap.set('n', '<A-p>', '<Cmd>BufferLineTogglePin<CR>')
 -- Close buffer
 vim.keymap.set('n', '<A-c>', '<Cmd>bd<CR>')
 -- Close commands
-vim.keymap.set('n', '<leader>cab', '<Cmd>BufferCloseAllButCurrentOrPinned<CR>')
 vim.keymap.set('n', '<leader>cal', '<Cmd>BufferLineCloseLeft<CR>')
-vim.keymap.set('n', '<leader>car', '<Cmd>BufferCloseRight<CR>')
+vim.keymap.set('n', '<leader>car', '<Cmd>BufferLineCloseRight<CR>')
 -- Magic buffer-picking mode
 vim.keymap.set('n', '<C-p>', '<Cmd>BufferLinePick<CR>')
 -- Sort automatically by...
