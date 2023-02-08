@@ -7,7 +7,6 @@
 - set delta as lazygit custom pager - https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md
 - install github cli - https://github.com/cli/cli/blob/trunk/docs/install_linux.md
 - intall fd-find - `sudo apt install fd-find`
-- install Sad for file replacement - https://github.com/ms-jpq/sad
 - install packer - https://github.com/wbthomason/packer.nvim
 - install oh-my-zsh - https://ohmyz.sh/
 - install thefuck - `pip install thefuck`

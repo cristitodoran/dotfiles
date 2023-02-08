@@ -34,3 +34,5 @@ vim.g.mapleader = ' '
 
 vim.g.auto_cursorline_wait_ms = 0
 
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
