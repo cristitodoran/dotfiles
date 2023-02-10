@@ -20,8 +20,9 @@
 ### Telescope - find files and in files
 `<leader>pf` - open finder  
 `<leader>ps` - find in files  
-`<leader>pg` - open finder for git files  
-`<leader>pr` - find in files current word  
+`<leader>pg` - find in file current word if in visual mode  
+`<leader>pg` - find in file  
+`<leader>pl` - find in files current word if in visual mode  
 `<leader>pl` - live find  
 
 **In search window:**
@@ -126,3 +127,6 @@
 - incercat harpoon si poate sa ascund tree, sau folosit cu ce vine deja vim
 - checkout marks
 - checkout this https://github.com/ldelossa/nvim-ide - for git file history
+
+### Quick reference
+https://neovim.io/doc/user/quickref.html
