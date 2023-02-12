@@ -261,4 +261,10 @@ use {
   end
 }
 use 'mattn/emmet-vim'
+use({
+	"Pocco81/auto-save.nvim",
+	config = function()
+		 require("auto-save").setup {}
+	end,
+})
 end)
