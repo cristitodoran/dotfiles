@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
   -- Theme
   use {
     'shaunsingh/solarized.nvim',
-    config = function ()
+    config = function()
       vim.cmd('colorscheme solarized')
     end
   }
@@ -65,7 +65,7 @@ return require('packer').startup(function(use)
   -- dev icons
   use 'nvim-tree/nvim-web-devicons'
   -- tabs
-  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+  use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
   -- file tree
   use {
     'nvim-tree/nvim-tree.lua',
@@ -197,74 +197,74 @@ return require('packer').startup(function(use)
   use { 'junegunn/fzf', run = function()
     vim.fn['fzf#install']()
   end
-}
-use({
-  "roobert/search-replace.nvim",
-  config = function()
-    require("search-replace").setup({
-      -- optionally override defaults
-      default_replace_single_buffer_options = "gcI",
-      default_replace_multi_buffer_options = "egcI",
-    })
-  end,
-})
--- install without yarn or npm
-use({
-  "iamcco/markdown-preview.nvim",
-  run = function() vim.fn["mkdp#util#install"]() end,
-})
-use 'stsewd/gx-extended.vim'
-use 'nvim-treesitter/nvim-treesitter-context'
-use 'mfussenegger/nvim-dap'
-use {
-  "rcarriga/nvim-dap-ui",
-  requires = { "mfussenegger/nvim-dap" },
-  config = function()
-    require("dapui").setup()
-  end
-}
-use {
-  'NvChad/nvim-colorizer.lua',
-  config = function()
-    require('colorizer').setup();
-  end
-}
-use "lukas-reineke/indent-blankline.nvim"
-use {
-  'j-hui/fidget.nvim',
-  config = function()
-    require('fidget').setup{
-      window = {
-        blend = 0,
-      },
-    }
-  end
-}
-use {
-  "utilyre/barbecue.nvim",
-  tag = "*",
-  requires = {
-    "SmiteshP/nvim-navic",
-    "nvim-tree/nvim-web-devicons", -- optional dependency
-  },
-  after = "nvim-web-devicons", -- keep this if you're using NvChad
-  config = function()
-    require("barbecue").setup{
-      theme = "solarized"
-    }
-  end,
-}
-use {
-  'windwp/nvim-ts-autotag',
-  config = function()
-    require('nvim-ts-autotag').setup()
-  end
-}
-use 'mattn/emmet-vim'
-use({
-	"Pocco81/auto-save.nvim",
-	config = function()
-		 require("auto-save").setup {}
-	end,
-})
+  }
+  use({
+    "roobert/search-replace.nvim",
+    config = function()
+      require("search-replace").setup({
+        -- optionally override defaults
+        default_replace_single_buffer_options = "gcI",
+        default_replace_multi_buffer_options = "egcI",
+      })
+    end,
+  })
+  -- install without yarn or npm
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
+  use 'stsewd/gx-extended.vim'
+  use 'nvim-treesitter/nvim-treesitter-context'
+  use 'mfussenegger/nvim-dap'
+  use {
+    "rcarriga/nvim-dap-ui",
+    requires = { "mfussenegger/nvim-dap" },
+    config = function()
+      require("dapui").setup()
+    end
+  }
+  use {
+    'NvChad/nvim-colorizer.lua',
+    config = function()
+      require('colorizer').setup();
+    end
+  }
+  use "lukas-reineke/indent-blankline.nvim"
+  use {
+    'j-hui/fidget.nvim',
+    config = function()
+      require('fidget').setup {
+        window = {
+          blend = 0,
+        },
+      }
+    end
+  }
+  use {
+    "utilyre/barbecue.nvim",
+    tag = "*",
+    requires = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    after = "nvim-web-devicons", -- keep this if you're using NvChad
+    config = function()
+      require("barbecue").setup {
+        theme = "solarized"
+      }
+    end,
+  }
+  use {
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require('nvim-ts-autotag').setup()
+    end
+  }
+  use 'mattn/emmet-vim'
+  use({
+    "Pocco81/auto-save.nvim",
+    config = function()
+      require("auto-save").setup {}
+    end,
+  })
 end)

@@ -89,3 +89,6 @@ vim.keymap.set('n', '<leader>do', function() require('dap').step_over() end)
 vim.keymap.set('n', '<leader>di', function() require('dap').step_into() end)
 vim.keymap.set('n', '<leader>dro', function() require('dap').repl.open() end)
 vim.keymap.set('n', '<leader>drc', function() require('dap').repl.close() end)
+
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
