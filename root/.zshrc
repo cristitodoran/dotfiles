@@ -122,6 +122,7 @@ source $ZSH/oh-my-zsh.sh
 alias editchanged="!git status --porcelain | sed -ne 's/^ M //p' | tr '\\n' '\\0' | tr -d '\"' | xargs -0 nvim"
 alias update="sudo pacman-mirrors -f 5 && sudo pacman -Syyu"
 alias v=nvim
+alias clear-modules="find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
