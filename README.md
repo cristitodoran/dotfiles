@@ -1,5 +1,8 @@
 # NEOVIM install
 
+### Cool stuff
+- https://www.boxpiper.com/posts/top-best-tools-for-developer
+
  ### Prerequisites
 - install neovim - `sudo apt install neovim`
 - install nerd font - https://www.nerdfonts.com/font-downloads
@@ -14,6 +17,12 @@
 - install libsql lite (for neoclip): `sudo apt-get -y install libsqlite3-0 libsqlite3-dev`
 - install tig - https://jonas.github.io/tig/
 - install lldb for debuging c programs. After that make sure llvm-symbolizer path is in the PATH
+- install btop to replace htop - https://github.com/aristocratos/btop
+- install exa - better ls - https://the.exa.website/?
+- install forgit - https://github.com/wfxr/forgit?
+- install ugit - undo latest git command - https://github.com/Bhupesh-V/ugit?
+- install lazydocker - https://github.com/jesseduffield/lazydocker?
+- install dstp to check urls fast - https://github.com/ycd/dstp?
 
 ### Leader ? - cheatsheet
 
