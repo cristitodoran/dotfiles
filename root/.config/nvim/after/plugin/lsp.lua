@@ -9,3 +9,7 @@ local lsp = require('lsp-zero').preset({
 lsp.nvim_workspace()
 
 lsp.setup()
+
+require('lspconfig').tsserver.setup({
+  root_dir = require('lspconfig.util').root_pattern('.git')
+})

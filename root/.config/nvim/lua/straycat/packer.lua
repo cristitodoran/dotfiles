@@ -1,5 +1,3 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
@@ -65,7 +63,11 @@ return require('packer').startup(function(use)
   -- dev icons
   use 'nvim-tree/nvim-web-devicons'
   -- tabs
-  use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
+  use {
+    'akinsho/bufferline.nvim',
+    tag = "v3.*",
+    requires = 'nvim-tree/nvim-web-devicons',
+  }
   -- file tree
   use {
     'nvim-tree/nvim-tree.lua',
@@ -92,7 +94,7 @@ return require('packer').startup(function(use)
   -- surround with stuff
   use({
     "kylechui/nvim-surround",
-    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    tag = "*",
     config = function()
       require("nvim-surround").setup({
         -- Configuration here, or leave empty to use defaults
@@ -116,7 +118,7 @@ return require('packer').startup(function(use)
   use {
     "AckslD/nvim-neoclip.lua",
     requires = {
-      { 'kkharji/sqlite.lua', module = 'sqlite' },
+      { 'kkharji/sqlite.lua',           module = 'sqlite' },
       { 'nvim-telescope/telescope.nvim' },
     },
     config = function()
@@ -267,4 +269,17 @@ return require('packer').startup(function(use)
       require("auto-save").setup {}
     end,
   })
+  use({
+    'Wansmer/treesj',
+    requires = { 'nvim-treesitter' },
+    config = function()
+      require('treesj').setup({ --[[ your config ]] })
+    end,
+  })
+  use {
+    "m4xshen/smartcolumn.nvim",
+    config = function()
+      require("smartcolumn").setup()
+    end,
+  }
 end)

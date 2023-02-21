@@ -24,8 +24,6 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
--- format file
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
@@ -69,13 +67,10 @@ vim.keymap.set('n', '<leader>be', '<Cmd>BufferLineSortByExtension<CR>')
 
 -- nvim-tree
 vim.keymap.set('n', '<leader>tt', '<Cmd>NvimTreeToggle<CR>')
-vim.keymap.set("n", "<leader>mn", require("nvim-tree.api").marks.navigate.next)
-vim.keymap.set("n", "<leader>mp", require("nvim-tree.api").marks.navigate.prev)
-vim.keymap.set("n", "<leader>ms", require("nvim-tree.api").marks.navigate.select)
+vim.keymap.set('n', '<leader>tg', '<Cmd>NvimTreeFindFile<CR>')
 
 -- auto-session
 vim.keymap.set('n', '<leader>ss', '<Cmd>SaveSession<CR>')
---vim.keymap.set('n', '<leader>sr', '<Cmd>NvimTreeClose<CR><Cmd>RestoreSession<CR><Cmd>NvimTreeFocus<CR>')
 vim.keymap.set('n', '<leader>sr', '<Cmd>RestoreSession<CR>')
 
 -- clipboard manager
@@ -90,7 +85,13 @@ vim.keymap.set('n', '<leader>di', function() require('dap').step_into() end)
 vim.keymap.set('n', '<leader>dro', function() require('dap').repl.open() end)
 vim.keymap.set('n', '<leader>drc', function() require('dap').repl.close() end)
 
+-- diagnostic
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 
+-- lsp
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+
+--split join
+vim.keymap.set('n', '<leader>sj', '<Cmd>TSJToggle<CR>')
