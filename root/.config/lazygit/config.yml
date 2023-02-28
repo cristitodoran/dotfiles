@@ -9,6 +9,8 @@ gui:
     lightTheme: true
     selectedLineBgColor:
       - '#EEE8D5'
+    cherryPickedCommitBgColor:
+      - '#EEE8D5'
 customCommands:
   - key: "M"
     command: "nvim . -c \"DiffviewOpen\""
