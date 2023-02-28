@@ -7,6 +7,8 @@ gui:
   showIcons: true
   theme:
     lightTheme: true
+    selectedLineBgColor:
+      - '#EEE8D5'
 customCommands:
   - key: "M"
     command: "nvim . -c \"DiffviewOpen\""
