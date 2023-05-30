@@ -282,4 +282,5 @@ return require('packer').startup(function(use)
       require("smartcolumn").setup()
     end,
   }
+  use 'vim-test/vim-test'
 end)

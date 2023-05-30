@@ -95,3 +95,6 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 --split join
 vim.keymap.set('n', '<leader>sj', '<Cmd>TSJToggle<CR>')
+
+--show git history for current file
+vim.keymap.set('n', '<leader>l', '<Cmd>Git log -- %<CR>')
