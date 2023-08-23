@@ -139,3 +139,4 @@ source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 
+source /home/straycat/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
