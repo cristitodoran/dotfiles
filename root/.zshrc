@@ -141,3 +141,7 @@ bindkey -v
 bindkey '^R' history-incremental-search-backward
 
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go;
+export PATH=$PATH:$GOPATH/bin;

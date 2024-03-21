@@ -28,6 +28,11 @@ return {
         },
         sorting_strategy = "ascending",
         winblend = 0,
+        file_ignore_patterns = {
+          "%.test.js",
+          "%.stories.js",
+          "^node_modules/",
+        },
       },
     },
   },
