@@ -1,6 +1,8 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/straycat/backup/programare/dotfiles
+- /home/straycat/backup/programare/site-tata
+- /home/straycat/backup/programare/nextjs
 startuppopupversion: 5
 customcommandshistory: []
 hidecommandlog: false

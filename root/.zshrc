@@ -89,6 +89,7 @@ fzf
 ripgrep
 z
 aliases
+zsh-fzf-history-search
 )
 
 source $ZSH/oh-my-zsh.sh
