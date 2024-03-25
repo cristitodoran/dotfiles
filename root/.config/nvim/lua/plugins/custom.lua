@@ -35,6 +35,29 @@ return {
         },
       },
     },
+    dependencies = {
+      "polarmutex/git-worktree.nvim",
+      build = "make",
+      config = function()
+        require("telescope").load_extension("git_worktree")
+      end,
+    },
+    keys = {
+      {
+        "<leader>gw",
+        function()
+          require("telescope").extensions.git_worktree.git_worktrees()
+        end,
+        desc = "Change git worktree",
+      },
+      {
+        "<leader>ga",
+        function()
+          require("telescope").extensions.git_worktree.create_git_worktree()
+        end,
+        desc = "Add git worktree",
+      },
+    },
   },
   { "iberianpig/tig-explorer.vim" },
   {

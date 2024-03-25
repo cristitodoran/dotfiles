@@ -137,10 +137,9 @@ export NVM_DIR="$HOME/.nvm"
 source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source /usr/share/doc/fzf/examples/key-bindings.zsh
 
-bindkey -v
-bindkey '^R' history-incremental-search-backward
-
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
 
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go;
