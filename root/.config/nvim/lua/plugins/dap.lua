@@ -23,6 +23,23 @@ return {
         )
       end
 
+      dap.configurations.c = {
+        {
+          name = "Launch file",
+          type = "codelldb",
+          request = "launch",
+          args = function()
+            local args_string = vim.fn.input("Input arguments: ")
+            return vim.split(args_string, " ")
+          end,
+          program = function()
+            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+          end,
+          cwd = "${workspaceFolder}",
+          --stopAtEntry = true,
+        },
+      }
+
       for _, language in ipairs(js_based_languages) do
         dap.configurations[language] = {
           -- Debug single nodejs files

@@ -86,7 +86,6 @@ zsh-autosuggestions
 zsh-interactive-cd
 thefuck
 fzf
-ripgrep
 z
 aliases
 zsh-fzf-history-search
@@ -138,9 +137,21 @@ source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source /usr/share/doc/fzf/examples/key-bindings.zsh
 
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
 
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go;
 export PATH=$PATH:$GOPATH/bin;
+
+aws-sso-cli() {
+  command aws-sso-cli "$@" | while read -r line; do
+    if [[ $line =~ ^export ]]; then
+      eval $line
+    fi
+  done
+}
+
+# whitbread aliases
+alias k='kubectl'
+alias k_images='k get deployment -o custom-columns="POD NAME:.metadata.name,CONTAINER IMAGES:.spec.template.spec.containers[*].image,HELM:.metadata.labels.helm\.sh/chart,CREATION TIMESTAMP:.metadata.creationTimestamp,LAST DEPLOY:.status.conditions[?(@.reason==\"NewReplicaSetAvailable\")].lastUpdateTime"'
+alias k_resource='k get deployment -o custom-columns="POD NAME:.metadata.name,MEMORY REQ:.spec.template.spec.containers[*].resources.requests.memory,MEMORY LIMIT:.spec.template.spec.containers[*].resources.limits.memory,CPU REQ:.spec.template.spec.containers[*].resources.requests.cpu,CPU LIMIT:.spec.template.spec.containers[*].resources.limits.cpu"'
+alias k_hr='k get hr -o custom-columns="NAME:.metadata.name,READY:.status.conditions[?(@.type==\"Ready\")].status,LAST ATTEMPT:.status.lastAttemptedRevision,LAST APPLIED:.status.lastAppliedRevision,IMAGE TAG:.spec.values.image.tag,ALL TRANSITIONS TIMESTAMP:.status.conditions[*].lastTransitionTime"'

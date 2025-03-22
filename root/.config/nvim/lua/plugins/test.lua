@@ -6,7 +6,7 @@ return {
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
       "nvim-treesitter/nvim-treesitter",
-      "haydenmeade/neotest-jest",
+      "nvim-neotest/neotest-jest",
     },
     opts = function(_, opts)
       table.insert(

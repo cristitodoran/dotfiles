@@ -29,7 +29,8 @@ return {
         sorting_strategy = "ascending",
         winblend = 0,
         file_ignore_patterns = {
-          "%.test.js",
+          --"%.test.ts",
+          --"%.test.tsx",
           "%.stories.js",
           "^node_modules/",
         },
